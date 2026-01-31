@@ -1,0 +1,7 @@
+System files
+
+sshd_secure.conf stored in /etc/sshd/sshd_conf.d/
+
+User files
+
+authorized_keys stored in ~/.ssh/

@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+notify() {
+    local message="$1"
+    notify-send "${message:-'Rclone-watch encountered an error'}"
+}
+
+sync-wait() {
+    while pgrep -f rclone-bisync > /dev/null; do
+        message='Rclone-bisync is already running.'
+        echo "$message"
+        notify "$message"
+        sleep 1
+    done
+    $HOME/.local/bin/rclone-bisync
+}
+
+watch-wait() {
+    if pgrep -f rclone-watch | grep -vq "^$$\$" > /dev/null; then
+        message='Rclone-bisync is already running.'
+        echo "$message"
+        notify "$message"
+        exit 1
+    fi
+}
+
+watch_dir="$HOME/GDrive"
+sync_delay="5"
+sync_interval="120"
+watch_events="modify,delete,create,move"
+options=(
+    --recursive
+    --timeout="$sync_interval"
+    --event="$watch_events"
+)
+
+watch-wait
+
+echo "Starting initial rlcone sync."
+sync-wait
+
+while true ; do
+    inotifywait "${options[@]}" "$watch_dir"
+    code=$?
+    if [[ "$code" == 0 ]]; then
+        echo 'File changes detected.'
+        sleep "$sync_delay"
+        sync-wait
+        echo 'Synchronized new file changes.'
+    elif [[ "$code" == 1 ]]; then
+        echo '"inotifywait error exit code 1.'
+        sleep 10
+    elif [[ "$code" == 2 ]]; then
+        echo 'No changes within timeout. Starting periodic sync.'
+        sync-wait
+    fi
+done

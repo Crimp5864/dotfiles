@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+notify() {
+    local message="$1"
+    notify-send "${message:-'Rclone GDrive Sync encountered an error'}"
+}
+
+gdrivelocal="$HOME/GDrive/"
+gdriveremote="google-drive:/"
+options=(
+    #--resync
+    #--force
+	#--dry-run
+	--checksum
+	--compare=size,checksum
+    --fast-list
+    --drive-skip-gdocs
+    --resilient
+    --recover
+    --max-lock=5m
+	--drive-use-trash
+    --create-empty-src-dirs
+    --log-level=INFO
+)
+
+if ! mkdir -p "$gdrivelocal"; then
+    echo "Unable to create $gdrivelocal" >&2
+    notify "Unable to create $gdrivelocal"
+    exit 1
+fi
+
+rclone bisync "$gdriveremote" "$gdrivelocal" "${options[@]}" || {
+    message='Failed to run rclone-bisync. Check log for details.'
+    echo "$message"
+    notify "$message"
+}

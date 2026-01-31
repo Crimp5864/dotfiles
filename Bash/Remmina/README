@@ -1,0 +1,8 @@
+Remmina connection profile storage location
+
+Directory
+~/.local/share/remmina
+
+Files:
+*.remmina
+Created automatically by Remmina GUI
