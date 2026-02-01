@@ -23,10 +23,10 @@ set cursorline
 set cursorcolumn
 
 " Set shift width to 4 spaces.
-set shiftwidth=4
+set shiftwidth=8
 
 " Set tab width to 4 columns.
-set tabstop=4
+set tabstop=8
 
 " Set text width to 80 columns
 set textwidth=80
