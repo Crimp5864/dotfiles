@@ -1,4 +1,5 @@
 Typical file locations
+Passwords and other sensitive details are in Bitwarden
 
 ~/.config/restic/
 
