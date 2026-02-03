@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	email = nicholaswilson97@gmail.com
+	name = Nicholas Wilson
+[pull]
+	ff = only
