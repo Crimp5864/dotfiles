@@ -1,9 +1,0 @@
-[Unit]
-Description=Restic hourly backup
-
-[Timer]
-OnCalendar=hourly
-Persistent=true
-
-[Install]
-WantedBy=timers.target

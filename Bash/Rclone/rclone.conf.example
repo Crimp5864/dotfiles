@@ -1,4 +1,0 @@
-[google-drive]
-type = drive
-client_id = <IN PASSWORD MANAGER>
-client_secret = <IN PASSWORD MANAGER>

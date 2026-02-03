@@ -1,8 +1,0 @@
-[Unit]
-Description=Run daily shutdown at 9:15 pm
-
-[Timer]
-OnCalendar=*-*-* 21:15:00
-
-[Install]
-WantedBy=timers.target
