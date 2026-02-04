@@ -3,5 +3,9 @@
 [user]
 	email = nicholaswilson97@gmail.com
 	name = Nicholas Wilson
-[pull]
-	ff = only
+[color]
+	ui = auto
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
