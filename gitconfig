@@ -9,3 +9,11 @@
 	default = simple
 	autoSetupRemote = true
 	followTags = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
