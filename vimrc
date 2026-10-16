@@ -29,7 +29,7 @@ set shiftwidth=8
 set tabstop=8
 
 " Set text width to 80 columns
-set textwidth=80
+"set textwidth=80
 
 " Set color column to 80 columns
 set colorcolumn=80
