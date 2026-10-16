@@ -71,12 +71,8 @@ set hlsearch
 " Set the commands to save in history default number is 20.
 set history=1000
 
-" Tell Vim where to store the viminfo file
+" Set viminfo path
 set viminfo+=n~/.config/vim/viminfo
 
-" Set directories inside ~/.config/vim/ or ~/.local/share/vim/
+" Set vim runtime path
 set runtimepath^=~/.config/vim
-set runtimepath+=~/.config/vim/after
-set directory=~/.local/state/vim/swap//
-set backupdir=~/.local/state/vim/backup//
-set undodir=~/.local/state/vim/undo//

@@ -4,7 +4,7 @@ auth        	on
 port        	587
 tls         	on
 tls_starttls	on
-logfile     	~/.msmtp.log
+logfile     	~/.local/state/msmtp/msmtp.log
 
 # Brevo SMTP relay
 account     	brevo
