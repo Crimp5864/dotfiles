@@ -49,3 +49,6 @@ Desktop.ini
 .cache/
 .tmp/
 *.tmp
+
+# Vagrant
+.vagrant/
