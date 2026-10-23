@@ -6,7 +6,9 @@
 [color]
 	ui = auto
 [push]
+  autoSetupRemote = true
 	default = simple
+  followTags = true
 [fetch]
 	prune = true
 [pull]
@@ -17,3 +19,10 @@
 	autocrlf = input
 [rebase]
 	autoStash = true
+[diff]
+  colorMoved = default
+  algorithm = histogram
+[rerere]
+  enabled = true
+[column]
+  ui = auto
