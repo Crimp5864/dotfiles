@@ -1,3 +1,7 @@
+" Required directories:
+" ~/.config/vim
+" ~/.local/state/vim
+"
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
