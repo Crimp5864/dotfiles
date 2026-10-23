@@ -1,3 +1,6 @@
+# Required directories:
+# ~/.local/state/msmtp
+#
 # Default values
 defaults
 auth        	on
