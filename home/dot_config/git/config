@@ -1,28 +1,41 @@
-[init]
-	defaultBranch = main
 [user]
-	email = nicholaswilson97@gmail.com
-	name = Nicholas Wilson
-[color]
-	ui = auto
-[push]
-  autoSetupRemote = true
-	default = simple
-  followTags = true
-[fetch]
-	prune = true
-[pull]
-	ff = only
+  email = nicholaswilson97@gmail.com
+  name = Nicholas Wilson
+
+[init]
+  defaultBranch = main
+
 [core]
-	editor = vim
-	pager = less
-	autocrlf = input
-[rebase]
-	autoStash = true
-[diff]
-  colorMoved = default
-  algorithm = histogram
-[rerere]
-  enabled = true
+  editor = vim
+  pager = less
+  autocrlf = input
+
+[color]
+  ui = auto
+
 [column]
   ui = auto
+
+[push]
+  autoSetupRemote = true
+  default = simple
+  followTags = true
+
+[fetch]
+  prune = true
+
+[pull]
+  rebase = false
+
+[rebase]
+  autoStash = true
+
+[rerere]
+  enabled = true
+
+[diff]
+  algorithm = histogram
+  colorMoved = default
+
+[merge]
+  conflictStyle = zdiff3
